@@ -1,0 +1,279 @@
+a {
+  text-decoration: none;
+}
+
+.main {
+  background-color: #FFFEDF;
+}
+
+/* 上部トップ画像部分 */
+.title-blank{
+  width: 100vw;
+  height: 80.95px;
+  background: #fff
+}
+.title-picture {
+  width: 100vw;
+  height: 430px;
+  background-image: image-url('top6.png');
+  background-size: cover;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.title-contents{
+  align-items: flex-start;
+  padding-top: 20px;
+  padding-left: 70px;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(32, 4, 4, 0.9);
+}
+
+.service-title {
+  font-size: 7vh;
+}
+
+.service-explain {
+  font-size: 2.5vh;
+  line-height: 30px;
+}
+/* //上部トップ画像部分 */
+
+
+/* Fesparationの説明 */
+.title{
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.list-pict {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.feature-contents {
+  padding: 13vh 15vw;
+}
+
+.feature-contents>.title {
+  text-align: center;
+  font-size: 3.5vh;
+  font-weight: bold;
+  margin-bottom: 5vh;
+  position: relative;
+}
+
+.feature-contents>.title::after {
+  content: '';
+  width: 360px;
+  height: 4px;
+  background-color: #4B1D00;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.feature-lists {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.feature-lists>.list {
+  width: 33vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-list-text {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 35px;
+}
+
+.feature-list-description {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.annotation{
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.partition-line{
+width: 100vw;
+height: 4px;
+background-color: #4B1D00;
+border-radius: 2px;
+margin-bottom: 30px;
+}
+
+/* //Fesparationの説明 */
+
+/* 新着イベント一覧 */
+.event-contents {
+  background-color: #FFFEDF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.event-contents>.title {
+  font-size: 8vh;
+  line-height: 1.4;
+  font-weight: bold;
+  padding-bottom: 50px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.event-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+}
+
+.item-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFFEDF;
+}
+
+.event-img-content {
+  position: relative;
+}
+
+.event-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.event-info {
+  background-color: #FFFEDF;
+  color: black;
+  padding: 1vw;
+}
+
+.event-name {
+  font-size: 4vh;
+}
+
+.event-date {
+  font-size: 2vh;
+  display: flex;
+}
+
+.event-prefecture{
+  font-size: 2vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.heart-btn {
+  display: flex;
+  align-items: center;
+}
+
+.heart-icon {
+  height: 3vh;
+  width: 3vh;
+}
+
+.event-none{
+  font-size: 4vh;
+  font-weight: bold;
+}
+
+.more-btn a{
+  width: 80vw;
+  display: block;
+  font-family: 'Dosis', sans-serif;
+  font-size: 2em;
+  line-height: 1;
+  text-decoration: none;
+  padding: 0.35em 0 0.35em;
+  border: solid 6px #4B1D00;
+  border-radius: 5px;
+  color: #4B1D00;
+  margin: 30px 0 50px;
+  text-align: center;
+}
+
+
+/* //新着イベント一覧 */
+
+/* イベント検索 */
+.event-search{
+  background-color: #FFFEDF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.event-search>.title {
+  font-size: 8vh;
+  line-height: 1.4;
+  font-weight: bold;
+  padding-bottom: 50px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.search-text{
+  font-size: 3vh;
+  font-weight: bold;
+  padding: 0 0 1vh 1vh;
+}
+
+.search-form {
+  width: 50vw;
+  height: 7vh;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.search-form>.input-box {
+  width: 100%;
+  height: 7vh;
+  padding-left: 10px;
+  margin-right: 1vh;
+  border:2px solid #4B1D00;
+  border-radius: 5px;
+}
+
+.search-button {
+  width: 7vh;
+  border: 0;
+  cursor: pointer;
+  background-color: #4B1D00;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.search-icon {
+  width: 100%;
+}
+
+/* //イベント検索 */
+
+
+
+.pagetop{
+  text-align: center;
+  display: block;
+  width: 100%;
+  color: #FFFEDF;
+  background-color: #4B1D00;
+  font-weight: 700;
+  font-size: 1.5em;
+  text-decoration: none;
+  padding: 0.6em 0 0.6em;
+  margin-top: 50px;
+  font-family: 'Dosis', sans-serif;
+}
