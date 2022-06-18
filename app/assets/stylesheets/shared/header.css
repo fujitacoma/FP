@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.top-page-header {
+  width: 100vw;
+  background-color: #FFFEDF;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 10;
+}
+
+.header-contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.fp-icon {
+  width: 21vw;
+  padding-left: 20px;
+}
+
+.nav {
+  font-size: 22px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-family: 'Dosis', sans-serif;
+}
+
+.lists {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.customer-nickname {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
+}
+
+.admin-nickname {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
+}
+
+
+.logout {
+  text-decoration: none;
+  color: #333333;
+}
+
+.login {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #333333;
+}

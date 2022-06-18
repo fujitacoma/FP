@@ -83,7 +83,7 @@ Fes(祭り) + Preparation(予習) = Fesparation
 - has_many :fav_events,through :favorites,source :event
 
 
-## admin テーブル
+## admins テーブル
 
 | Column             | Type   | Options                   |
 | ------------------ | -------| --------------------------|
@@ -102,6 +102,7 @@ Fes(祭り) + Preparation(予習) = Fesparation
 | event_name         | string     | null: false                    |
 | content            | text       | null: false                    |
 | prefecture_id      | integer    | null: false                    |
+| date               | date       | null: false                    |
 | official_link      | string     |                                |
 | youtube_link       | string     |                                |
 | instagram_link     | string     |                                |
