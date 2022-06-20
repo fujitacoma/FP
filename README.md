@@ -93,15 +93,16 @@ Fes(祭り) + Preparation(予習) = Fesparation
 | content            | text       | null: false                    |
 | prefecture_id      | integer    | null: false                    |
 | date               | date       | null: false                    |
-| official_link      | string     |                                |
-| youtube_link       | string     |                                |
-| instagram_link     | string     |                                |
-| twitter_link       | string     |                                |
+| official_link      | text       |                                |
+| youtube_link       | text       |                                |
+| instagram_link     | text       |                                |
+| twitter_link       | text       |                                |
+| user               | references | null: false, foreign_key: true |
 
 ### Association
 - has_many :comments
 - has_many :favorites
-- has_many :customers,through :comments,favorites
+- has_many :users,through :comments,favorites
 
 
 ## comments テーブル
@@ -109,21 +110,21 @@ Fes(祭り) + Preparation(予習) = Fesparation
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | content            | text       | null: false                    |
-| customer           | references | null: false, foreign_key: true |
+| user               | references | null: false, foreign_key: true |
 | event              | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :event
-- belongs_to :customer
+- belongs_to :user
 
 
 ## favorites テーブル
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| customer           | references | null: false, foreign_key: true |
+| user               | references | null: false, foreign_key: true |
 | event              | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :event
-- belongs_to :customer
+- belongs_to :user

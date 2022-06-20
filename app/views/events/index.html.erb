@@ -65,36 +65,40 @@
   <div class='event-contents'>
     <h2 class='title'>NEW EVENTS</h2>
     <ul class='event-lists'>
-
-      <%# イベントのインスタンス変数になにか入っている場合、中身を新着順に3つまで展開する %>
-      <li class='list'>
-        <%= link_to "#" do %>
-        <div class='event-img-content'>
-          <%= image_tag "test.png", class: "event-img" %>
-        </div>
-        <div class='event-info'>
-          <h3 class='event-name'>
-            <%= "イベント名" %>
-          </h3>
-          <div class='event-date'>
-            <span><%= "○月○日" %></span>
-          </div>
-          <div class='event-prefecture'>
-            <span><%= "○○県" %></span>
-              <div class='heart-btn'>
-                <%= image_tag "favorite.png", class:"heart-icon" %>
+    <% if @events.present?%>
+      <% @events.each do |event|%>
+        <li class='list'>
+          <%= link_to event_path(event.id) do %>
+            <div class='event-img-content'>
+              <%= image_tag event.image, class: "event-img" %>
+            </div>
+            <div class='event-info'>
+              <h3 class='event-name'>
+                <%= event.event_name %>
+              </h3>
+              <div class='event-date'>
+                <span><%= event.date %></span>
               </div>
-          </div>
-        </div>
-        <% end %>
-      </li>
+              <div class='event-prefecture'>
+                <span><%= event.prefecture.name %></span>
+                  <div class='heart-btn'>
+                    <%= image_tag "favorite.png", class:"heart-icon" %>
+                  </div>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    <% end %>
     </ul>
     <%# //イベントのインスタンス変数になにか入っている場合、中身を新着順に3つまで展開する %>
     <%# 新着イベントがない場合は以下の文章が表示される %>
     <%# 新着イベントがある場合は表示されない %>
-    <div class='event-none'>
-        新着イベントはありません
-    </div>
+    <% unless @events.present?%>
+      <div class='event-none'>
+          新着イベントはありません
+      </div>
+    <% end %>
     <%# //新着イベントがある場合は表示されない %>
     <%# 新着イベントがない場合は以下の文章が表示される %>
     <div class='more-btn'>
@@ -135,10 +139,10 @@
       </div>
   </div>
   <%# /イベント検索部分 %>
-<a href='#' class="pagetop">PAGE TOP</a>
+  <a href='#' class="pagetop">PAGE TOP</a>
 </div>
 <% if user_signed_in? %>
-  <%= link_to(root_path, class: 'newevent-btn') do %>
+  <%= link_to(new_event_path, class: 'newevent-btn') do %>
     <span class='newevent-btn-text'>New Post</span>
     <%= image_tag 'newevent.png' , size: '185x50' ,class: "newevent-btn-icon" %>
   <% end %>
