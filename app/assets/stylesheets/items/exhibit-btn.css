@@ -1,22 +1,25 @@
-.purchase-btn {
+.newevent-btn {
   width: 120px;
-  background: #3ccace;
+  background-color: #4B1D00;
   text-align: center;
-  border-radius: 4%;
+  border: 2px solid #FFFEDF;
+  border-radius: 10px;
   bottom: 32px;
   right: 32px;
   position: fixed;
   padding: 15px;
+
 }
 
-.purchase-btn-text {
-  color: #fff;
+.newevent-btn-text {
+  color: #FFFEDF;
   display: block;
-  font-size: 18px;
+  font-size: 20px;
   text-decoration: none;
   margin-bottom: 5px;
+  font-family: 'Dosis', sans-serif;
 }
 
-.purchase-btn-icon {
+.newevent-btn-icon {
   width: 60%;
 }

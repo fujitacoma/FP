@@ -39,11 +39,12 @@
   align-items: flex-end;
 }
 
-.customer-nickname {
+.user-nickname {
   text-decoration: none;
   margin-right: 3vw;
   color: #333333;
   font-weight: bold;
+  font-size: 26px;
 }
 
 .admin-nickname {
