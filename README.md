@@ -69,30 +69,20 @@ Fes(祭り) + Preparation(予習) = Fesparation
 
 # テーブル設計
 
-## customers テーブル
+## users テーブル
 
-| Column             | Type   | Options                   |
-| ------------------ | ------ | ------------------------  |
-| nickname           | string | null: false               |
-| email              | string | null: false, unique: true |
-| encrypted_password | string | null: false               |
-
-### Association
-- has_many :comments
-- has_many :favorites
-- has_many :fav_events,through :favorites,source :event
-
-
-## admins テーブル
-
-| Column             | Type   | Options                   |
-| ------------------ | -------| --------------------------|
-| nickname           | string | null: false               |
-| email              | string | null: false, unique: true |
-| encrypted_password | string | null: false               |
+| Column             | Type    | Options                   |
+| ------------------ | ------  | ------------------------  |
+| nickname           | string  | null: false               |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
+| admin              | boolean |                           |
 
 ### Association
 - has_many :events
+- has_many :comments
+- has_many :favorites
+- has_many :fav_events,through :favorites,source :event
 
 
 ## events テーブル
