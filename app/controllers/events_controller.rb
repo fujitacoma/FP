@@ -20,4 +20,8 @@ class EventsController < ApplicationController
   #   end
   # end
 
+  # def event_params
+  #   params.require(:event).permit(:content, :image).merge(user_id: current_user.id)
+  # end
+
 end
