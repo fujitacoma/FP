@@ -1,0 +1,104 @@
+<div class="new-event-contents">
+  <header class="new-event-header">
+    <%= link_to image_tag('title_logo.png' , size: '300x85'), "/" %>
+
+  </header>
+  <div class="new-event-main">
+    <h2 class="new-event-title">イベント情報を入力</h2>
+    <%= form_with model: @event, url: events_path, method: :post, local: true do |f| %>
+
+    <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+    <%= render 'shared/error_messages', model: @event %>
+    <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+
+    <%# イベント画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        イベント画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"event-image" %>
+      </div>
+    </div>
+    <%# /イベント画像 %>
+    <%# イベント名と説明 %>
+    <div class="new-events">
+      <div class="weight-bold-text">
+        イベント名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :event_name, class:"events-text", id:"event-name", placeholder:"イベント名（必須 40文字まで)", maxlength:"40" %>
+      <div class="events-content">
+        <div class="weight-bold-text">
+          イベント説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :content, class:"events-text", id:"events-info", placeholder:"イベント説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /イベント名と説明 %>
+
+    <%# イベント詳細 %>
+    <div class="events-venue">
+      <div class="form">
+        <div class="weight-bold-text">
+          イベント開催地
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"events-prefecture"}) %>
+      </div>
+    </div>
+    <div class='form-text-wrap'>
+      <div class="weight-bold-text">
+        イベント開催日
+        <span class="indispensable">必須</span>
+      </div>
+    </div>
+    <div class='input-date-wrap'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :date,
+                    class:'select-date',
+                    id:"event-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 2010,
+                    end_year: (Time.now.year + 1),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    </div>
+    <%# /イベント詳細 %>
+
+
+    <%# 各種リンク %>
+    <div class="event-links">
+      <div class="weight-bold-text">
+        各種リンク
+      </div>
+      <ul class="link-forms">
+        <li>OfficialHP<%= f.text_area :official_link, class:"link-form", id:"event-link", placeholder:"" %></li>
+        <li>YouTube<%= f.text_area :youtube_link, class:"link-form", id:"event-link", placeholder:"" %></li>
+        <li>Instagram<%= f.text_area :instagram_link, class:"link-form", id:"event-link", placeholder:"" %></li>
+        <li>Twitter<%= f.text_area :twitter_link, class:"link-form", id:"event-link", placeholder:"" %></li>
+      </ul>
+    </div>
+
+    <%# /各種リンク %>
+
+    <%# 下部ボタン %>
+    <div class="create-btn-contents">
+      <%= f.submit "作成する" ,class:"create-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+
+  <footer class="new-event-footer">
+    <%= link_to image_tag('title_logo.png' , size: '300x85'), "/" %>
+  </footer>
+</div>

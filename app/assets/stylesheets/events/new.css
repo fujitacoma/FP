@@ -1,8 +1,8 @@
 /* border-bottom: 1px solid #eee; */
 
 
-.items-sell-contents {
-  background-color: #f5f5f5;
+.new-event-contents {
+  background-color: #FFFEDF;
   font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
   font-size: 14px;
   display: flex;
@@ -11,19 +11,19 @@
   min-width: 500px;
 }
 
-.items-sell-header {
+.new-event-header {
   padding: 5vh 0;
   text-align: center;
 }
 
-.items-sell-main {
+.new-event-main {
   background-color: #FFF;
   width: 70vw;
   min-width: 450px;
   padding: 10vh 15vw;
 }
 
-.items-sell-title {
+.new-event-title {
   font-size: 22px;
   font-weight: bold;
   text-align: center;
@@ -53,28 +53,10 @@
   padding-left: 20px;
 }
 
-.question {
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  background: #0099e8;
-  color: #FFF;
-  font-size: 13px;
-  text-align: center;
-  line-height: 20px;
-  text-decoration: none;
-  margin-left: 5px;
-}
-
-.question-text {
-  display: flex;
-}
-
 /* /共通 */
 
-/* 商品画像 */
+/* イベント画像 */
 .img-upload {
-  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 2vh 0;
@@ -89,14 +71,14 @@
   margin-bottom: 15px;
 }
 
-/* /商品画像 */
+/* /イベント画像 */
 
-/* 商品名と商品説明 */
-.new-items {
+/* イベント名と説明 */
+.new-events {
   padding: 2vh 0;
 }
 
-.items-text {
+.events-text {
   width: 100%;
   padding: 16px 16px 8px;
   border-radius: 4px;
@@ -105,86 +87,87 @@
   resize: none;
 }
 
-.items-explain {
-  margin-top: 2vh;
+.events-content {
+  margin-top: 6vh;
 }
 
-/* /商品名と商品説明 */
+/* /イベント名と説明 */
 
-/* 商品の詳細など */
-.items-detail {
+/* イベント詳細 */
+.events-venue {
   display: flex;
   justify-content: space-between;
   padding: 2vh 0;
 }
 
-.items-detail>.form {
+.events-venue>.form {
   width: 300px;
   padding: 2vh 0;
 }
 
 .select-box {
   margin: 2vh 0;
+  border-radius: 4px;
 }
 
-/* /商品の詳細など */
-
-/* 販売価格 */
-.sell-price {
+.input-date-wrap {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.price-content {
-  width: 300px;
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.input-date-wrap select {
+  width: 75px;
+  margin-top: 15px;
+  height: 45px;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
 }
 
-.price-text {
-  /* min-width: 170px; */
-  display: flex;
-  align-items: center;
+.input-date-wrap p {
+  line-height: 80px;
+  padding: 0 5px;
 }
 
-.sell-yen {
-  font-size: 18px;
+/* /イベント詳細 */
+
+/* 各種リンク */
+.event-links {
+  padding: 4vh 0;
+}
+.link-forms{
+  list-style: none;
 }
 
-.price-input {
-  height: 30px;
-  text-align: right;
-  padding-right: 10px;
+.link-form{
+  width: 100%;
+  height: 25px;
+  resize: none;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  resize: none;
+  margin: 5px 0;
+  padding: 2px 4px;
 }
 
-/* /販売価格 */
-
-/* 注意書き */
-.caution {
-  padding: 5vh 0;
-}
-
-.sentence>a {
-  color: #0099e8;
-  text-decoration: none;
-}
-
-/* /注意書き */
+/*/ 各種リンク */
 
 /* 下部ボタン */
-.sell-btn-contents {
+.create-btn-contents {
   width: 100%;
   text-align: center;
+  padding-top: 30px;
 }
 
-.sell-btn {
-  background: #ea352d;
-  border: 1px solid #ea352d;
-  color: #fff;
+.create-btn {
+  background: #4B1D00;
+  border:1px solid #4B1D00;
+  border-radius: 5px;
+  color: #FFF;
   width: 100%;
   height: 50px;
   font-size: 14px;
@@ -194,6 +177,7 @@
 .back-btn {
   background: #aaa;
   border: 1px solid #aaa;
+  border-radius: 5px;
   color: #fff;
   padding: 15px 35%;
   text-decoration: none;
@@ -201,29 +185,11 @@
 
 /* /下部ボタン */
 
-.items-sell-footer {
-  background-color: #f5f5f5;
+.new-event-footer {
+  background-color: #FFFEDF;
   width: 60vw;
   padding: 3ch 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-
-.items-sell-footer>.menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 3vh 0;
-}
-
-.menu>li>a {
-  color: black;
-  font-size: 12px;
-  margin: 2vw;
-}
-
-.inc {
-  font-size: 13px;
 }
