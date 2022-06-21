@@ -32,7 +32,7 @@
   min-height: 400px;
   background-color: #fff;
   object-fit: contain;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .event-edit-btn {
@@ -46,8 +46,9 @@
 }
 
 .or-text {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
+  font-family: 'Dosis', sans-serif;
 }
 
 .event-destroy {
@@ -59,11 +60,18 @@
   padding: 2vh 10vw;
 }
 
+.event-about{
+  color: black;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
 .event-explain-box {
-  font-size: 30px;
-  margin: 40px 0px;
+  font-size: 40px;
+  margin: 30px 0px;
   overflow-wrap: anywhere;
   font-weight: bold;
+  font-family: 'Dosis', sans-serif;
 }
 
 .detail-table {
@@ -125,30 +133,39 @@
 /* コメント機能 */
 .comment-box {
   width: 40vw;
-  background-color: #fff;
+  background-color: #FFF;
+  min-width: 1200px;
+  padding: 0 15vw;
+  margin-bottom: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment-form {
+  width: 40vw;
+  background-color: #FFF;
   margin: 5vh 0;
   text-align: center;
 }
 
-.comment-text {
+.comment-content {
   width: 100%;
   height: 100px;
   padding: 10px;
-  border: solid 2px #dedede;
+  border: solid 2px #4B1D00;
   resize: none;
 }
 
 .comment-warn {
-  padding: 10px;
   font-size: 14px;
   margin: 10px 0px;
-  text-align: left;
 }
 
 .comment-btn {
   line-height: 48px;
-  background-color: #3CCACE;
-  border: 1px solid #3CCACE;
+  background-color: #4B1D00;
+  border: 1px solid #4B1D00;
   color: #fff;
   width: 50%;
   min-width: 150px;
@@ -166,26 +183,28 @@
   margin: 10px 5px 0 0;
 }
 
-.links {
+.comment{
+  width: 85%;
+  font-size: 20px;
   display: flex;
-  justify-content: space-between;
-  width: 50vw;
-
+  padding: 5px 10px;
+  background-color: #FFF;
+  border: 1px solid #fff;
+  border-radius: 5px;
 }
 
-.change-item-btn {
-  font-size: 30px;
-  text-decoration: none;
-  color: #3CCACE;
+.comment p{
+   margin: 0;
 }
 
-.another-item {
-  display: block;
-  margin: 30px 0px 8px;
-  color: #3CCACE;
-  text-decoration: none;
+.user-info{
+  color: #4B1D00;
   font-weight: bold;
-  font-size: 23px;
+}
+
+.comment-info{
+  font-size: 16px;
+  padding-top: 3px;
 }
 
 /* /コメント機能 */
