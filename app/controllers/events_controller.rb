@@ -12,6 +12,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+
     if @event.save
       redirect_to root_path
     else
@@ -20,7 +21,7 @@ class EventsController < ApplicationController
   end
 
   def show
-
+    @event = Event.find(params[:id])
   end
 
   private
