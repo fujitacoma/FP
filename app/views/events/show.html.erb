@@ -1,0 +1,68 @@
+<%= render "shared/header" %>
+
+<%# イベント概要 %>
+<div class="event-show">
+  <div class="event-box">
+    <h2 class="name">
+      <%= @event.event_name %>
+    </h2>
+    <div class="event-img-content">
+      <%= image_tag @event.image ,class:"event-box-img" %>
+    </div>
+
+    <% if @event.user == current_user%>
+      <%= link_to "イベントの編集", "#", method: :get, class: "event-edit-btn" %>
+      <p class="or-text">or</p>
+      <%= link_to "イベントの削除", "#", method: :delete, class:"event-destroy" %>
+    <% end %>
+
+    <div class="event-explain-box">
+      <span><%= "イベント詳細" %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+          <th class="detail-event">イベント開催地</th>
+          <td class="detail-value"><%= @event.prefecture.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-event">イベント開催日</th>
+          <td class="detail-value"><%= @event.date %></td>
+        </tr>
+        <tr>
+          <th class="detail-event">オフィシャルサイト</th>
+          <td class="detail-value"><%= link_to "Official HP", @event.official_link %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="event-link">
+      <%= link_to image_tag("youtube-icon.png", class: "link-btn"), @event.youtube_link %>
+      <%= link_to image_tag("insta-icon.png", class: "link-btn"), @event.instagram_link %>
+      <%= link_to image_tag("twitter-icon.png", class: "link-btn"), @event.twitter_link %>
+    </div>
+  <% if user_signed_in? %>
+    <div class='heart-btn'>
+      <%= image_tag "favorite.png", class:"heart-icon" %>
+      <span>お気に入り</span>
+    </div>
+  <% end %>
+  </div>
+  <%# /イベント概要 %>
+  <% if user_signed_in? %>
+    <div class="comment-box">
+      <form>
+        <textarea class="comment-text"></textarea>
+        <p class="comment-warn">
+          相手のことを考え丁寧なコメントを心がけましょう。
+          <br>
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        </p>
+        <button type="submit" class="comment-btn">
+          <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+          <span>コメントする<span>
+        </button>
+      </form>
+    </div>
+  <% end %>
+</div>
+
+<%= render "shared/footer" %>
