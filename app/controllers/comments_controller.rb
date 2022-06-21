@@ -2,8 +2,9 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    @event = Event.find(params[:event_id])
     if @comment.save
-      redirect_to event_path(params[:event_id])
+      CommentChannel.broadcast_to @event, { comment: @comment, user: @comment.user }
     end
   end
 

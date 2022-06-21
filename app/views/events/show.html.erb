@@ -54,13 +54,14 @@
     <div class="event-explain-box">
       <span><%= "comments" %></span>
     </div>
-    <% @event.comments.each do |comment| %>
-      <div class="comment">
-        <p class="user-info"><%= comment.user.nickname %>： </p>
-        <p class="comment-info"><%= comment.content%></p>
-      </div>
-    <% end %>
-
+    <div id="comments">
+      <% @event.comments.each do |comment| %>
+        <div class="comment">
+          <p class="user-info"><%= comment.user.nickname %>： </p>
+          <p class="comment-info"><%= comment.content%></p>
+        </div>
+      <% end %>
+    </div>
     <% if user_signed_in? %>
       <div class="comment-form">
         <%= form_with model: [@event, @comment], id: "comment-form" do |f| %>
