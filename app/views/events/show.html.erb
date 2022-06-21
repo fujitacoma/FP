@@ -11,9 +11,9 @@
     </div>
 
     <% if @event.user == current_user%>
-      <%= link_to "イベントの編集", "#", method: :get, class: "event-edit-btn" %>
+      <%= link_to "イベントの編集", edit_event_path, class: "event-edit-btn" %>
       <p class="or-text">or</p>
-      <%= link_to "イベントの削除", "#", method: :delete, class:"event-destroy" %>
+      <%= link_to "イベントの削除", event_path, method: :delete, class:"event-destroy" %>
     <% end %>
 
     <div class="event-explain-box">
