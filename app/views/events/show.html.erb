@@ -73,6 +73,9 @@
         <% end %>
       </div>
     <% end %>
+    <% unless user_signed_in? %>
+      <div class="space"></div>
+    <% end %>
   </div>
   <%# /コメント機能 %>
 </div>
