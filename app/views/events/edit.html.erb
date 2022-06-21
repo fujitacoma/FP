@@ -1,3 +1,6 @@
+<%# cssは商品出品のものを併用。
+app/assets/stylesheets/events/new.css %>
+
 <div class="new-event-contents">
   <header class="new-event-header">
     <%= link_to image_tag('title_logo.png' , size: '300x85'), "/" %>
@@ -71,7 +74,6 @@
     </div>
     <%# /イベント詳細 %>
 
-
     <%# 各種リンク %>
     <div class="event-links">
       <div class="weight-bold-text">
@@ -87,10 +89,11 @@
 
     <%# /各種リンク %>
 
+
     <%# 下部ボタン %>
     <div class="create-btn-contents">
-      <%= f.submit "作成する" ,class:"create-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+      <%= f.submit "変更する" ,class:"create-btn" %>
+      <%=link_to 'もどる', event_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>
