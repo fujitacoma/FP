@@ -17,8 +17,9 @@
     <% end %>
 
     <div class="event-explain-box">
-      <span><%= "イベント詳細" %></span>
+      <span><%= "about" %></span>
     </div>
+    <div class='event-about'><%= @event.content %></div>
     <table class="detail-table">
       <tbody>
           <th class="detail-event">イベント開催地</th>
@@ -47,22 +48,33 @@
   <% end %>
   </div>
   <%# /イベント概要 %>
-  <% if user_signed_in? %>
-    <div class="comment-box">
-      <form>
-        <textarea class="comment-text"></textarea>
-        <p class="comment-warn">
-          相手のことを考え丁寧なコメントを心がけましょう。
-          <br>
-          不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        </p>
-        <button type="submit" class="comment-btn">
-          <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-          <span>コメントする<span>
-        </button>
-      </form>
+
+  <%# コメント機能 %>
+  <div class="comment-box">
+    <div class="event-explain-box">
+      <span><%= "comments" %></span>
     </div>
-  <% end %>
+    <div id="comments">
+      <% @event.comments.each do |comment| %>
+        <div class="comment">
+          <p class="user-info"><%= comment.user.nickname %>： </p>
+          <p class="comment-info"><%= comment.content%></p>
+        </div>
+      <% end %>
+    </div>
+    <% if user_signed_in? %>
+      <div class="comment-form">
+        <%= form_with model: [@event, @comment], id: "comment-form" do |f| %>
+          <%= f.text_area :content , class: "comment-content"%>
+          <p class="comment-warn">
+            相手のことを考え,丁寧なコメントを心がけましょう。
+          </p>
+          <%= f.submit "コメントする", class: "comment-btn" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <%# /コメント機能 %>
 </div>
 
 <%= render "shared/footer" %>

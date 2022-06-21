@@ -4,6 +4,7 @@ class Event < ApplicationRecord
 
   belongs_to :user
   has_one_attached :image
+  has_many :comments
 
   with_options presence: true do
     validates :image, :event_name, :content, :date, :user_id
