@@ -1,0 +1,89 @@
+.new-event-header {
+  padding: 1vh 0;
+  text-align: center;
+  background-color: #FFFEDF;
+}
+
+.user-name{
+  font-size: 20px;
+  padding-right: 20px;
+  font-weight: bold;
+  font-family: 'Dosis', sans-serif;
+  text-align: right;
+  background-color: #FFFEDF;
+}
+
+.like-event-contents{
+  background-color: #FFFEDF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.like-event-contents>.title{
+  font-size: 40px;
+  margin: 30px 0px;
+  font-weight: bold;
+  font-family: 'Dosis', sans-serif;
+}
+
+.like-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin-bottom: 50px;
+}
+
+.like-lists>.list {
+  width: 35vh;
+  padding: 1vw;
+  background-color: #FFFEDF;
+  display: flex;
+  justify-content: center;
+  margin: 0 30px;
+}
+
+.event-img-content {
+  position: relative;
+}
+
+.event-img {
+  width: 35vh;
+  height: 35vh;
+  padding: 1vw;
+  border-radius: 25px;
+}
+
+.event-info {
+  width: 35vh;
+  background-color: #FFFEDF;
+  color: black;
+  padding: 1vw;
+}
+
+.event-name {
+  font-size: 2.8vh;
+}
+
+.event-date {
+  font-size: 2vh;
+  display: flex;
+}
+
+.event-prefecture{
+  font-size: 2vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-heart-btn {
+  display: flex;
+  align-items: center;
+}
+
+.top-heart-icon {
+  height: 3vh;
+  width: 3vh;
+}
