@@ -1,13 +1,14 @@
-  <header class="new-event-header">
-    <%= link_to image_tag('title_logo.png' , size: '300x85'), "/" %>
-  </header>
+<%= render "shared/header" %>
 
+<div class ='title-blank'>
+</div>
 <div class="contents-row">
   <p class='user-name'><%= @user.nickname %>さんのマイページ</p>
   <div class='like-event-contents'>
   <h2 class='title'>like events</h2>
+    <% if @favorite_list.present? %>
       <ul class='like-lists'>
-        <% @events.each do |event|%>
+        <% @favorite_list.each do |event| %>
           <li class='list'>
             <%= link_to event_path(event.id) do %>
               <div class='event-img-content'>
@@ -22,31 +23,18 @@
                 </div>
                 <div class='event-prefecture'>
                   <span><%= event.prefecture.name %></span>
-                    <div class='top-heart-btn'>
-                      <%= image_tag "favorite.png", class:"top-heart-icon" %>
-                  </div>
                 </div>
               </div>
             <% end %>
           </li>
         <% end %>
       </ul>
+    <% else %>
+      <div class='favorite-event-none'>
+          お気に入りイベントはありません
+      </div>
+    <% end %>
   </div>
 </div>
-
-<%# /* お気に入り機能テスト */ %>
-
-<% if @favorite_list.present? %>
-  <% @favorite_list.each do |event| %>
-    <%= image_tag event.image, class: "event-img" %>
-    <%= event.event_name %>
-    <%= event.date %>
-    <%= event.prefecture.name %>
-  <% end %>
-<% end %>
-
-
-<%# /* /お気に入り機能テスト */ %>
-
 
 <%= render "shared/footer" %>

@@ -1,11 +1,15 @@
   <% if user_signed_in? %>
 
-  <%# お気に入り機能テスト %>
     <% if current_user.favorite_by?(@event.id) %>
-      <p><%= link_to 'いいねを外す', destroy_favorite_path(@event), method: :DELETE, remote: true %> <%= @event.favorites.count %></p>
+      <div class="unlike-btn">
+        <p><%= link_to image_tag("unlike.png" ,class:"heart-icon"), destroy_favorite_path(@event), method: :DELETE, remote: true %></p>
+        <p><%= "unlike" %></p>
+      </div>
     <% else %>
-      <p><%= link_to 'いいね', create_favorite_path(@event), method: :POST, remote: true %> <%= @event.favorites.count %></p>
+      <div class="like-btn">
+        <p><%= link_to image_tag("like.png" ,class:"heart-icon"), create_favorite_path(@event), method: :POST, remote: true %></p>
+        <p><%= "like!" %></p>
+      </div>
     <% end %>
-  <%# /お気に入り機能テスト %>
 
   <% end %>
