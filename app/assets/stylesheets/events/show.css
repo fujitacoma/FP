@@ -12,7 +12,7 @@
 .event-box {
   background-color: #FFF;
   width: 70vw;
-  min-width: 1200px;
+  min-width: 1100px;
   padding: 0 15vw;
   padding-top: 10vh;
   display: flex;
@@ -44,6 +44,7 @@
   color: #FFF;
   margin: 20px 0px;
   padding: 2vh 10vw;
+  border-radius: 10px;
 }
 
 .or-text {
@@ -53,12 +54,13 @@
 }
 
 .event-destroy {
-  background-color: lightgray;
+  background-color: rgb(168, 168, 168);
   text-align: center;
   font-size: 24px;
   color: black;
   margin: 20px 0px;
   padding: 2vh 10vw;
+  border-radius: 10px;
 }
 
 .event-about{
@@ -83,18 +85,20 @@
 .detail-event {
   width: 20%;
   height: 60px;
-  background-color: #eee;
-  border: 1px solid #dedede;
+  background-color: #FFFEDF;
+  border: 2px solid #4B1D00;
   font-size: 14px;
   text-align: center;
+  border-radius: 5px 0 0 5px;
 }
 
 .detail-value {
   width: 80%;
   padding: 10px;
-  border: 1px solid #dedede;
+  background-color: #FFFEDF;
+  border: 2px solid #4B1D00;
   font-size: 14px;
-  
+  border-radius: 0 5px 5px 0;
 }
 
 .event-link{
@@ -116,7 +120,7 @@
 .comment-box {
   width: 40vw;
   background-color: #FFF;
-  min-width: 1200px;
+  min-width: 1100px;
   padding: 0 15vw;
   margin-bottom: 6px;
   display: flex;
@@ -135,8 +139,10 @@
   width: 100%;
   height: 100px;
   padding: 10px;
-  border: solid 2px #4B1D00;
+  border: solid 3px #4B1D00;
   resize: none;
+  border-radius: 10px;
+  font-size: 17px;
 }
 
 .comment-warn {
@@ -151,9 +157,10 @@
   color: #fff;
   width: 50%;
   min-width: 150px;
-  font-size: 18px;
+  font-size: 25px;
   border-radius: 100px;
   margin-bottom: 2vh;
+  font-family: 'Dosis', sans-serif;
 }
 
 .comment-flag {
@@ -188,6 +195,7 @@
 .comment-info{
   font-size: 16px;
   padding-top: 3px;
+  font-weight: 500;
 }
 
 /* /コメント機能 */
