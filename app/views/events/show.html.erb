@@ -13,7 +13,7 @@
     <% if user_signed_in? && current_user.admin?%>
       <%= link_to "イベントの編集", edit_event_path, class: "event-edit-btn" %>
       <p class="or-text">or</p>
-      <%= link_to "イベントの削除", event_path, method: :delete, class:"event-destroy" %>
+      <%= link_to "イベントの削除", event_path, method: :delete, class:"event-destroy",data: {confirm: "本当に削除しますか？"} %>
     <% end %>
 
     <div class="event-explain-box">
@@ -40,12 +40,13 @@
       <%= link_to image_tag("insta-icon.png", class: "link-btn"), @event.instagram_link %>
       <%= link_to image_tag("twitter-icon.png", class: "link-btn"), @event.twitter_link %>
     </div>
-  <% if user_signed_in? %>
-    <div class='heart-btn'>
-      <%= image_tag "favorite.png", class:"heart-icon" %>
-      <span>お気に入り</span>
-    </div>
-  <% end %>
+
+  <%# お気に入り機能テスト %>
+  <div id="event_<%= @event.id %>">
+    <%= render 'event', event: @event %>
+  </div>
+  <%# /お気に入り機能テスト %>
+
   </div>
   <%# /イベント概要 %>
 

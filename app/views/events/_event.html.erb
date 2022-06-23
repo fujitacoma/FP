@@ -1,0 +1,15 @@
+  <% if user_signed_in? %>
+
+    <% if current_user.favorite_by?(@event.id) %>
+      <div class="unlike-btn">
+        <p><%= link_to image_tag("unlike.png" ,class:"heart-icon"), destroy_favorite_path(@event), method: :DELETE, remote: true %></p>
+        <p><%= "unlike" %></p>
+      </div>
+    <% else %>
+      <div class="like-btn">
+        <p><%= link_to image_tag("like.png" ,class:"heart-icon"), create_favorite_path(@event), method: :POST, remote: true %></p>
+        <p><%= "like!" %></p>
+      </div>
+    <% end %>
+
+  <% end %>
