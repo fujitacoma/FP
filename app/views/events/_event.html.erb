@@ -1,0 +1,11 @@
+  <% if user_signed_in? %>
+
+  <%# お気に入り機能テスト %>
+    <% if current_user.favorite_by?(@event.id) %>
+      <p><%= link_to 'いいねを外す', destroy_favorite_path(@event), method: :DELETE, remote: true %> <%= @event.favorites.count %></p>
+    <% else %>
+      <p><%= link_to 'いいね', create_favorite_path(@event), method: :POST, remote: true %> <%= @event.favorites.count %></p>
+    <% end %>
+  <%# /お気に入り機能テスト %>
+
+  <% end %>

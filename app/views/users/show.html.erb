@@ -33,4 +33,20 @@
       </ul>
   </div>
 </div>
+
+<%# /* お気に入り機能テスト */ %>
+
+<% if @favorite_list.present? %>
+  <% @favorite_list.each do |event| %>
+    <%= image_tag event.image, class: "event-img" %>
+    <%= event.event_name %>
+    <%= event.date %>
+    <%= event.prefecture.name %>
+  <% end %>
+<% end %>
+
+
+<%# /* /お気に入り機能テスト */ %>
+
+
 <%= render "shared/footer" %>
