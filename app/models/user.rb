@@ -10,5 +10,11 @@ class User < ApplicationRecord
 
   has_many :events
   has_many :comments
+  has_many :favorites, dependent: :destroy
+  has_many :favcom_events, through: [:favorites, :comments], source: :event
+
+  def favorite_by?(event_id)
+    favorites.where(event_id: event_id).exists?
+  end
 
 end

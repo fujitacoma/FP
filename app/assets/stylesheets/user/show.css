@@ -78,12 +78,8 @@
   justify-content: space-between;
 }
 
-.top-heart-btn {
-  display: flex;
-  align-items: center;
-}
-
-.top-heart-icon {
-  height: 3vh;
-  width: 3vh;
+.favorite-event-none{
+  font-size: 3.5vh;
+  font-weight: bold;
+  margin: 15vh 0 28vh 0;
 }

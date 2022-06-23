@@ -109,26 +109,6 @@
   margin: 0 10px;
 }
 
-
-.heart-btn {
-  font-size: 17px;
-  border-radius: 40px;
-  width: 18vw;
-  min-width: 200px;
-  color: rgb(249, 75, 0);
-  border: 2px solid #ffb340;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.heart-icon {
-  margin-right: 5px;
-  height: 30px;
-  margin: 5px 0;
-}
-
 /* /イベント概要 */
 
 
@@ -211,6 +191,7 @@
 }
 
 /* /コメント機能 */
+
 
 .space{
   height: 50px;
