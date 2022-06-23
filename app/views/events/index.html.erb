@@ -111,28 +111,26 @@
     <h2 class='title'>SEARCH</h2>
       <div class='search-bar-contents'>
         <div class='search-text'>キーワードから探す</div>
-        <form class="search-form" action="#">
+        <%= form_with(url: search_events_path, local: true, method: :get, class: "search-form") do |f| %>
           <input class='input-box' placeholder='イベント名、アーティスト名を入力'>
           <button class="search-button">
             <%= image_tag "search.png", class:"search-icon" %>
           </button>
-        </form>
-        <%# 新規イベント投稿機能の実装完了後に修正 %>
-        <div class='search-text'>都道府県から探す</div>
-        <form class="search-form" action="#">
-          <input class='input-box' placeholder='プルダウンで実装予定'>
+        <% end %>
+        <div class='search-text'>開催地から探す</div>
+        <%= form_with(url: search_events_path, local: true, method: :get, class: "search-form") do |f| %>
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"input-box", id:"events-prefecture"}) %>
           <button class="search-button">
             <%= image_tag "search.png", class:"search-icon" %>
           </button>
-        </form>
+        <% end %>
         <div class='search-text'>開催月から探す</div>
-        <form class="search-form" action="#">
-          <input class='input-box' placeholder='プルダウンで実装予定'>
+        <%= form_with(url: search_events_path, local: true, method: :get, class: "search-form") do |f| %>
+          <%= select_tag "submit_name", options_for_select([["---", "---"],["1月", "1月"],["2月","2月"],["3月","3月"],["4月","4月"],["5月", "5月"],["6月","6月"],["7月","7月"],["8月","8月"],["9月", "9月"],["10月","10月"],["11月","11月"],["12月","12月"]]), {class:'input-box'}%>
           <button class="search-button">
             <%= image_tag "search.png", class:"search-icon" %>
           </button>
-        </form>
-        <%# 新規イベント投稿機能の実装完了後に修正 %>
+        <% end %>
       </div>
   </div>
   <%# /イベント検索部分 %>
