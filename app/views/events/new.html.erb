@@ -2,9 +2,12 @@
   <header class="new-event-header">
     <%= link_to image_tag('title_logo.png' , size: '300x85'), "/" %>
   </header>
-  
   <div class="new-event-main">
-    <h2 class="new-event-title">イベント情報を入力</h2>
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+        newpost form
+      </h1>
+    </div>
     <%= form_with(model: @event, local: true) do |f| %>
 
     <%= render 'shared/error_messages', model: @event %>
@@ -89,8 +92,8 @@
 
     <%# 下部ボタン %>
     <div class="create-btn-contents">
-      <%= f.submit "作成する" ,class:"create-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+      <%= f.submit "send" ,class:"create-btn" %>
+      <%=link_to 'back', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>

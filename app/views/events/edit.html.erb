@@ -7,7 +7,11 @@ app/assets/stylesheets/events/new.css %>
 
   </header>
   <div class="new-event-main">
-    <h2 class="new-event-title">イベント情報を入力</h2>
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+        edit form
+      </h1>
+    </div>
     <%= form_with(model: @event, local: true) do |f| %>
 
     <%= render 'shared/error_messages', model: @event %>
@@ -92,8 +96,8 @@ app/assets/stylesheets/events/new.css %>
 
     <%# 下部ボタン %>
     <div class="create-btn-contents">
-      <%= f.submit "変更する" ,class:"create-btn" %>
-      <%=link_to 'もどる', event_path, class:"back-btn" %>
+      <%= f.submit "send" ,class:"create-btn" %>
+      <%=link_to 'back', event_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>
