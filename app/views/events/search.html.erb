@@ -2,12 +2,10 @@
 
 <div class ='title-blank'></div>
 <div class="contents-row">
-  <p class='user-name'><%= @user.nickname %>さんのマイページ</p>
-  <div class='like-event-contents'>
-  <h2 class='title'>like events</h2>
-    <% if @favorite_list.present? %>
-      <ul class='like-lists'>
-        <% @favorite_list.each do |event| %>
+  <div class='search-event-contents'>
+    <h2 class='title'>search results</h2>
+      <ul class='search-lists'>
+        <% @events.each do |event| %>
           <li class='list'>
             <%= link_to event_path(event.id) do %>
               <div class='event-img-content'>
@@ -28,11 +26,18 @@
           </li>
         <% end %>
       </ul>
-    <% else %>
-      <div class='favorite-event-none'>
-          お気に入りイベントはありません
+  </div>
+    <div class='event-search'>
+      <div class='search-page-bar-contents'>
+        <div class='search-text'>キーワードから探す</div>
+        <%= form_with(url: search_events_path, local: true, method: :get, class: "search-form") do |form| %>
+          <input class='input-box' placeholder='イベント名、アーティスト名を入力'>
+          <button class="search-button">
+            <%= image_tag "search.png", class:"search-icon" %>
+          </button>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
 
