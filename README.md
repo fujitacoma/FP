@@ -76,7 +76,7 @@ Fes(祭り) + Preparation(予習) = Fesparation
 | nickname           | string  | null: false               |
 | email              | string  | null: false, unique: true |
 | encrypted_password | string  | null: false               |
-| admin              | boolean |                           |
+| admin              | boolean | default: false            |
 
 ### Association
 - has_many :events

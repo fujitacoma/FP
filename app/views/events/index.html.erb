@@ -81,9 +81,6 @@
               </div>
               <div class='event-prefecture'>
                 <span><%= event.prefecture.name %></span>
-                  <div class='top-heart-btn'>
-                    <%= image_tag "favorite.png", class:"top-heart-icon" %>
-                  </div>
               </div>
             </div>
           <% end %>
@@ -141,7 +138,7 @@
   <%# /イベント検索部分 %>
   <a href='#' class="pagetop">PAGE TOP</a>
 </div>
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.admin? %>
   <%= link_to(new_event_path, class: 'newevent-btn') do %>
     <span class='newevent-btn-text'>New Post</span>
     <%= image_tag 'newevent.png' , size: '185x50' ,class: "newevent-btn-icon" %>

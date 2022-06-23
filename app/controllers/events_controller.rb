@@ -1,10 +1,11 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
   before_action :find_params, only: [:show, :edit, :update, :destroy]
-  before_action :move_to_index, only: [:edit, :update, :destroy]
+  before_action :move_to_index, only: [:new,:create, :edit, :update, :destroy]
 
   def index
     @events = Event.order("created_at DESC")
+    @user = User.find_by(params[:id])
   end
 
   def new
@@ -51,7 +52,7 @@ class EventsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to root_path unless @event.user == current_user
+    redirect_to root_path unless user_signed_in? && current_user.admin?
   end
 
 end
