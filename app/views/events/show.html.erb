@@ -63,6 +63,11 @@
         </div>
       <% end %>
     </div>
+    <% unless @event.comments.present?%>
+      <div class='event-none'>
+        コメントはありません
+      </div>
+    <% end %>
     <% if user_signed_in? %>
       <div class="comment-form">
         <%= form_with model: [@event, @comment], id: "comment-form" do |f| %>
@@ -70,7 +75,7 @@
           <p class="comment-warn">
             相手のことを考え,丁寧なコメントを心がけましょう。
           </p>
-          <%= f.submit "コメントする", class: "comment-btn" %>
+          <%= f.submit "comment", class: "comment-btn" %>
         <% end %>
       </div>
     <% end %>
