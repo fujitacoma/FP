@@ -1,10 +1,10 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
   before_action :find_params, only: [:show, :edit, :update, :destroy]
-  before_action :move_to_index, only: [:new,:create, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @events = Event.order("created_at DESC")
+    @events = Event.order('created_at DESC')
     @user = User.find_by(params[:id])
   end
 
@@ -46,11 +46,11 @@ class EventsController < ApplicationController
     @search = params[:search]
   end
 
-
   private
 
   def event_params
-    params.require(:event).permit(:event_name, :content, :prefecture_id, :date, :official_link, :youtube_link, :instagram_link, :twitter_link, :image).merge(user_id: current_user.id)
+    params.require(:event).permit(:event_name, :content, :prefecture_id, :date, :official_link, :youtube_link, :instagram_link,
+                                  :twitter_link, :image).merge(user_id: current_user.id)
   end
 
   def find_params
@@ -60,5 +60,4 @@ class EventsController < ApplicationController
   def move_to_index
     redirect_to root_path unless user_signed_in? && current_user.admin?
   end
-
 end

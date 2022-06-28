@@ -11,9 +11,8 @@ class FavoritesController < ApplicationController
   end
 
   private
-  
+
   def event_params
     @event = Event.find(params[:id])
   end
-
 end
