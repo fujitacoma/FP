@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :event do
-    event_name	         { Faker::Name.name }
+    event_name { Faker::Name.name }
     content              { Faker::Lorem.sentence }
     prefecture_id        { 2 }
-    date                 {'2020-10-01'}
+    date                 { '2020-10-01' }
     association :user
 
     after(:build) do |event|
