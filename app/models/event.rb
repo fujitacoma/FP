@@ -13,7 +13,6 @@ class Event < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
-
   def self.search(search)
     if search != ""
       Event.where(["event_name like?", "%#{search}%"])

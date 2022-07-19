@@ -46,7 +46,6 @@ class EventsController < ApplicationController
     @search = params[:search]
   end
 
-
   private
 
   def event_params
