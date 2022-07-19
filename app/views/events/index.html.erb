@@ -109,22 +109,24 @@
     <h2 class='title'>SEARCH</h2>
       <div class='search-bar-contents'>
         <div class='search-text'>キーワードから探す</div>
-        <%= form_with(url: search_events_path, local: true, method: :get, class: "search-form") do |f| %>
-          <input class='input-box' placeholder='イベント名、アーティスト名を入力'>
+        <%= search_form_for @search, url: search_events_path, local: true, method: :get, class: "search-form" do |f| %>
+          <%= f.text_field :event_name_cont, :class => 'input-box', placeholder: 'イベント名、アーティスト名を入力' %>
           <button class="search-button">
             <%= image_tag "search.png", class:"search-icon" %>
           </button>
         <% end %>
+
         <div class='search-text'>開催地から探す</div>
-        <%= form_with(url: search_events_path, local: true, method: :get, class: "search-form") do |f| %>
-          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"input-box", id:"events-prefecture"}) %>
+        <%=  search_form_for @search, url: search_events_path, local: true, method: :get, class: "search-form" do |f| %>
+          <%= f.collection_select :prefecture_id_eq, Prefecture.all, :id, :name, {}, class:"input-box", id:"events-prefecture" %>
           <button class="search-button">
             <%= image_tag "search.png", class:"search-icon" %>
           </button>
         <% end %>
-        <div class='search-text'>開催月から探す</div>
-        <%= form_with(url: search_events_path, local: true, method: :get, class: "search-form") do |f| %>
-          <%= select_tag "submit_name", options_for_select([["---", "---"],["1月", "1月"],["2月","2月"],["3月","3月"],["4月","4月"],["5月", "5月"],["6月","6月"],["7月","7月"],["8月","8月"],["9月", "9月"],["10月","10月"],["11月","11月"],["12月","12月"]]), {class:'input-box'}%>
+        
+        <div class='search-text'>開催月日から探す</div>
+        <%=  search_form_for @search, url: search_events_path, local: true, method: :get, class: "search-form" do |f| %>
+          <%= f.text_field :date_cont, :class => 'input-box', placeholder: '開催月日を入力 (例)04/24' %>
           <button class="search-button">
             <%= image_tag "search.png", class:"search-icon" %>
           </button>
