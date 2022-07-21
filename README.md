@@ -82,6 +82,7 @@ Fes(祭り) + Preparation(予習) = Fesparation
 - has_many :events
 - has_many :comments
 - has_many :favorites
+- has_many :com_events,through :comments,source :event
 - has_many :fav_events,through :favorites,source :event
 
 
