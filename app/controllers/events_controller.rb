@@ -41,11 +41,6 @@ class EventsController < ApplicationController
     redirect_to root_path if @event.destroy
   end
 
-  def search
-    @events = Event.search(params[:search])
-    @search = params[:search]
-  end
-
   private
 
   def event_params
